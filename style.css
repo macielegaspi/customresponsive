@@ -1,0 +1,97 @@
+body {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+	background: grey;
+}
+
+.half_page {
+	height: calc(100%/2);
+	width: 100%;
+	display: flex;
+}
+
+/* sources image in a way that can be changed by breakpoints*/
+.ronnyboi {content: url("images/ronnyviolent.gif");}
+
+.ron2 {content: url("https://media.giphy.com/media/5yzvlzQFqePni/source.gif");}
+
+/* initially setting both color classes to transparent, so they can be changed with breakpoints */
+.color1 {color: transparent;}
+
+.color2 {color: transparent;}
+
+/* changes image to baconron gif, top div is set to another baconron gif */
+@media only screen and (max-width: 900px) {
+ .ron2 {content: url("images/baconron.gif");}
+ .ronnyboi {content: url("images/baconron.gif");}
+ body {
+	 background: yellow;
+ }
+}
+
+/* small kitten in bottom div, kittyloaf image disappears */
+@media only screen and (max-width: 670px) {
+ .ron2 {content: url("images/ronhead.jpeg");}
+ .ronnyboi {content: url("images/baconron.gif");}
+ body {
+	 background: yellow;
+ }
+}
+
+/* small kitten in top div, background changes to blue */
+@media only screen and (max-width: 465px) {
+ 	.ronnyboi {content: url("images/ronhead.jpeg");}
+	.ron2 {content: url("images/ronhead.jpeg");}
+ 	body {
+	 background-color: lightblue;
+ 	}
+}
+
+/* both top & bottom divs are set to contain kittyloaf image */
+@media only screen and (max-width: 420px) {
+ 	.ronnyboi {content: url("images/ronnydance.gif");}
+	.ron2 {content: url("images/ronnydance.gif");}
+}
+
+/* top div is set to pink */
+@media only screen and (max-width: 360px) {
+	.color1 {background-color: pink;}
+}
+
+/* bottom div is set to pink, top div is set to blue */
+@media only screen and (max-width: 300px) {
+	.color2 {background-color: pink;}
+	.color1 {background-color: lightblue;}
+}
+
+/* top and bottom divs become transparent, background set to pink */
+@media only screen and (max-width: 290px) {
+	.color1 {background-color: transparent;}
+	.color2 {background-color: transparent;}
+	body {
+	 background-color: pink;
+ 	}
+}
+
+/* hides all content at this breakpoint */
+@media only screen and (max-width: 240px) {
+	body {
+	 display: none;
+ 	}
+}
+
+
+/* constrains image sizes within their parent div */
+.contain-img {
+	max-height: 99%;
+	max-width: 99%;
+}
+
+/* centers items within their parent div */
+.center {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
